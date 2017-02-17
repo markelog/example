@@ -20,7 +20,7 @@ const app = new Koa();
 // Define the app
 app.use(logger());
 app.use(errors());
-app.use(favicon(__dirname + '/favicon.ico'));
+app.use(favicon(`${__dirname}/favicon.ico`));
 app.use(bodyParser());
 
 app.listen(config.http.port, () => {
