@@ -19,7 +19,10 @@ const logger = require('./middlewares/logger');
 const app = new Koa();
 
 // Define the app
-app.use(logger());
+if (config.shouldLog) {
+  app.use(logger());
+}
+
 app.use(errors());
 app.use(favicon(`${__dirname}/favicon.ico`));
 app.use(bodyParser());
