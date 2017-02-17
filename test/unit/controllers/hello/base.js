@@ -1,6 +1,6 @@
 const Hello = require('../../../../src/controllers/hello');
 
-describe.skip('Hello controller', () => {
+describe('Hello controller', () => {
   let instance;
 
   beforeEach(() => {

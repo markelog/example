@@ -9,6 +9,7 @@ const favicon = require('koa-favicon');
 const config = require('./configs');
 
 // Routers
+const hello = require('./routers/hello');
 
 // Middlewares
 const errors = require('./middlewares/errors');
@@ -22,6 +23,9 @@ app.use(logger());
 app.use(errors());
 app.use(favicon(`${__dirname}/favicon.ico`));
 app.use(bodyParser());
+
+app.use(hello.allowedMethods({ throw: true }));
+app.use(hello.routes());
 
 app.listen(config.http.port, () => {
   console.log('Started');

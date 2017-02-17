@@ -1,4 +1,4 @@
-describe.skip('GET /hello', () => {
+describe('GET /hello', () => {
   it('respond with "hello world"', () => {
     return request(app)
       .get('/hello/world')
