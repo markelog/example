@@ -3,6 +3,7 @@ const Koa = require('koa');
 
 // Koa dependencies
 const bodyParser = require('koa-bodyparser');
+const favicon = require('koa-favicon');
 
 // Internal dependecies
 const config = require('./configs');
@@ -18,8 +19,8 @@ const app = new Koa();
 
 // Define the app
 app.use(logger());
-
 app.use(errors());
+app.use(favicon(__dirname + '/favicon.ico'));
 app.use(bodyParser());
 
 app.listen(config.http.port, () => {
