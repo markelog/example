@@ -13,6 +13,3 @@ global.request = supertest;
 
 // Can't use an `const  statement =,require(it will initialize ap)p
 global.app = agent(require('../../src/app')).app;
-
-// Disable validations
-process.env.BYPASS_AUTH_ACL = true;
